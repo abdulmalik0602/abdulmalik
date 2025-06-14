@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Code, Coffee } from 'lucide-react';
+import { Heart, Code, Coffee, Github, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -12,6 +12,27 @@ const Footer: React.FC = () => {
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' }
+  ];
+
+  const socialLinks = [
+    { 
+      icon: Github, 
+      href: 'https://github.com/abdulmalik0602', 
+      label: 'GitHub',
+      color: 'hover:text-gray-300'
+    },
+    { 
+      icon: Linkedin, 
+      href: 'https://www.linkedin.com/in/p-a-abdul-malik/', 
+      label: 'LinkedIn',
+      color: 'hover:text-blue-400'
+    },
+    { 
+      icon: Coffee, 
+      href: 'https://buymeacoffee.com/abdulmalik0602', 
+      label: 'Buy me a Coffee',
+      color: 'hover:text-yellow-400'
+    }
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -99,7 +120,29 @@ const Footer: React.FC = () => {
               >
                 +91 9087035132
               </motion.a>
-              <p className="text-gray-400">Kerala, India</p>
+              <p className="text-gray-400">Kadayanallur, Tenkasi, Tamil Nadu, India</p>
+              
+              {/* Social Links */}
+              <div className="flex gap-4 pt-4">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-gray-400 transition-colors ${social.color}`}
+                    whileHover={{ scale: 1.2, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    title={social.label}
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </motion.a>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>

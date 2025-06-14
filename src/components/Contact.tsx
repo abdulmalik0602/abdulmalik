@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Github, Linkedin, Coffee } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -38,27 +38,42 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'abdul.malik@example.com',
-      href: 'mailto:abdul.malik@example.com'
+      value: 'paabdulmalikwork@gmail.com',
+      href: 'mailto:paabdulmalikwork@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 9876543210',
-      href: 'tel:+919876543210'
+      value: '+91 9087035132',
+      href: 'tel:+919087035132'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Kerala, India',
+      value: 'Kadayanallur, Tenkasi, Tamil Nadu, India',
       href: '#'
     }
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/abdul-malik', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/abdul-malik', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/abdul_malik', label: 'Twitter' }
+    { 
+      icon: Github, 
+      href: 'https://github.com/abdulmalik0602', 
+      label: 'GitHub',
+      color: 'hover:bg-gray-800 hover:text-white'
+    },
+    { 
+      icon: Linkedin, 
+      href: 'https://www.linkedin.com/in/p-a-abdul-malik/', 
+      label: 'LinkedIn',
+      color: 'hover:bg-blue-600 hover:text-white'
+    },
+    { 
+      icon: Coffee, 
+      href: 'https://buymeacoffee.com/abdulmalik0602', 
+      label: 'Buy me a Coffee',
+      color: 'hover:bg-yellow-500 hover:text-white'
+    }
   ];
 
   return (
@@ -139,13 +154,14 @@ const Contact: React.FC = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors group"
+                    className={`w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center transition-colors group ${social.color}`}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
+                    title={social.label}
                   >
                     <social.icon className="w-5 h-5" />
                   </motion.a>

@@ -67,115 +67,220 @@ const Hero: React.FC = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-8"
-        >
-          <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Abdul Malik P A
-          </motion.h1>
-          
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Profile Image */}
           <motion.div
-            className="h-16 mb-6 flex items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex justify-center lg:justify-start order-2 lg:order-1"
           >
-            <motion.h2
-              key={currentRole}
-              className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 font-medium"
+            <div className="relative">
+              {/* Background decoration */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-secondary-400/20 rounded-3xl blur-2xl"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  rotate: [0, 5, 0],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              
+              {/* Profile image container - Made taller to show full image */}
+              <motion.div
+                className="relative w-80 h-[500px] md:w-96 md:h-[600px] rounded-3xl overflow-hidden shadow-2xl"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img
+                  src="/abdulmalik1.png"
+                  alt="Abdul Malik P A - Full Stack Developer"
+                  className="w-full h-full object-cover object-top"
+                />
+                
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+              </motion.div>
+
+              {/* Floating elements */}
+              <motion.div
+                className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center shadow-lg"
+                animate={{
+                  y: [0, -10, 0],
+                  rotate: [0, 10, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <Code className="w-8 h-8 text-white" />
+              </motion.div>
+
+              <motion.div
+                className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-accent-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg"
+                animate={{
+                  y: [0, 10, 0],
+                  rotate: [0, -10, 0],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+              >
+                <Cloud className="w-6 h-6 text-white" />
+              </motion.div>
+
+              {/* Additional floating element */}
+              <motion.div
+                className="absolute top-1/2 -right-8 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg"
+                animate={{
+                  x: [0, 15, 0],
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 2
+                }}
+              >
+                <Users className="w-5 h-5 text-white" />
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Right Column - Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center lg:text-left order-1 lg:order-2"
+          >
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
-              {roles[currentRole]}
-            </motion.h2>
-          </motion.div>
+              Abdul Malik P A
+            </motion.h1>
+            
+            <motion.div
+              className="h-16 mb-6 flex items-center justify-center lg:justify-start"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <motion.h2
+                key={currentRole}
+                className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 font-medium"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+              >
+                {roles[currentRole]}
+              </motion.h2>
+            </motion.div>
 
-          <motion.p
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8 font-light"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            "From stack to strategy — I own it."
-          </motion.p>
-        </motion.div>
+            <motion.p
+              className="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 mb-8 font-light"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              "From stack to strategy — I own it."
+            </motion.p>
 
-        <motion.div
-          className="flex flex-wrap justify-center gap-6 mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <motion.div
-            className="flex items-center gap-3 px-6 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg"
-            whileHover={{ scale: 1.05, y: -2 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <Code className="w-5 h-5 text-primary-600 dark:text-primary-400" />
-            <span className="text-gray-700 dark:text-gray-300">1.5+ Years Experience</span>
-          </motion.div>
-          
-          <motion.div
-            className="flex items-center gap-3 px-6 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg"
-            whileHover={{ scale: 1.05, y: -2 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <Cloud className="w-5 h-5 text-secondary-600 dark:text-secondary-400" />
-            <span className="text-gray-700 dark:text-gray-300">Cloud Expert</span>
-          </motion.div>
-          
-          <motion.div
-            className="flex items-center gap-3 px-6 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg"
-            whileHover={{ scale: 1.05, y: -2 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <Users className="w-5 h-5 text-accent-600 dark:text-accent-400" />
-            <span className="text-gray-700 dark:text-gray-300">Team Leader</span>
-          </motion.div>
-        </motion.div>
+            <motion.div
+              className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}
+            >
+              <motion.div
+                className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg text-sm"
+                whileHover={{ scale: 1.05, y: -2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Code className="w-4 h-4 text-primary-600 dark:text-primary-400" />
+                <span className="text-gray-700 dark:text-gray-300">1.5+ Years Experience</span>
+              </motion.div>
+              
+              <motion.div
+                className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg text-sm"
+                whileHover={{ scale: 1.05, y: -2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Cloud className="w-4 h-4 text-secondary-600 dark:text-secondary-400" />
+                <span className="text-gray-700 dark:text-gray-300">Cloud Expert</span>
+              </motion.div>
+              
+              <motion.div
+                className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg text-sm"
+                whileHover={{ scale: 1.05, y: -2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Users className="w-4 h-4 text-accent-600 dark:text-accent-400" />
+                <span className="text-gray-700 dark:text-gray-300">Team Leader</span>
+              </motion.div>
+            </motion.div>
 
-        <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-        >
-          <motion.button
-            onClick={() => scrollToNext()}
-            className="group px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View My Work
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </motion.button>
-          
-          <motion.button
-            className="group px-8 py-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Download className="w-5 h-5" />
-            Download Resume
-          </motion.button>
-        </motion.div>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+              <motion.button
+                onClick={() => scrollToNext()}
+                className="group px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View My Work
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+              
+              <motion.button
+                className="group px-6 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Download className="w-4 h-4" />
+                Download Resume
+              </motion.button>
+            </motion.div>
+
+            {/* Location Badge */}
+            <motion.div
+              className="mt-6 flex justify-center lg:justify-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+            >
+              <div className="flex items-center gap-2 px-4 py-2 bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full text-sm text-gray-600 dark:text-gray-400">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span>Based in Tamil Nadu, India</span>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
 
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
+          transition={{ duration: 1, delay: 1.6 }}
         >
           <motion.button
             onClick={scrollToNext}

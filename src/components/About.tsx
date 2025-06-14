@@ -64,6 +64,12 @@ const About: React.FC = () => {
                 team collaboration.
               </p>
 
+              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                Based in Kadayanallur, Tenkasi, Tamil Nadu, India, I bring a unique perspective 
+                to global technology challenges while staying rooted in my local community. 
+                I believe in continuous learning and sharing knowledge with fellow developers.
+              </p>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                 {highlights.map((highlight, index) => (
                   <motion.div
