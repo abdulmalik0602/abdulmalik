@@ -15,21 +15,21 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { 
-      icon: Github, 
-      href: 'https://github.com/abdulmalik0602', 
+    {
+      icon: Github,
+      href: 'https://github.com/abdulmalik0602',
       label: 'GitHub',
       color: 'hover:text-gray-300'
     },
-    { 
-      icon: Linkedin, 
-      href: 'https://www.linkedin.com/in/p-a-abdul-malik/', 
+    {
+      icon: Linkedin,
+      href: 'https://www.linkedin.com/in/p-a-abdul-malik/',
       label: 'LinkedIn',
       color: 'hover:text-blue-400'
     },
-    { 
-      icon: Coffee, 
-      href: 'https://buymeacoffee.com/abdulmalik0602', 
+    {
+      icon: Coffee,
+      href: 'https://buymeacoffee.com/abdulmalik0602',
       label: 'Buy me a Coffee',
       color: 'hover:text-yellow-400'
     }
@@ -53,12 +53,15 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-              Abdul Malik P A
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/logo.png" alt="Logo" className="h-12 w-12 object-contain" />
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+                Abdul Malik P A
+              </h3>
+            </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Full Stack Developer passionate about creating innovative solutions and 
-              leading teams to deliver exceptional results. Specializing in cloud-native 
+              Full Stack Developer passionate about creating innovative solutions and
+              leading teams to deliver exceptional results. Specializing in cloud-native
               applications and microservices architecture.
             </p>
             <div className="flex items-center gap-2 text-sm text-gray-400">
@@ -121,7 +124,7 @@ const Footer: React.FC = () => {
                 +91 9087035132
               </motion.a>
               <p className="text-gray-400">Kadayanallur, Tenkasi, Tamil Nadu, India</p>
-              
+
               {/* Social Links */}
               <div className="flex gap-4 pt-4">
                 {socialLinks.map((social, index) => (
