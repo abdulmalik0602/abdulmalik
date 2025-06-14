@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Code, Coffee, Github, Linkedin } from 'lucide-react';
+import Logo from '../assets/logo.png';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -54,7 +55,7 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <img src="/logo.png" alt="Logo" className="h-12 w-12 object-contain" />
+              <img src={Logo} alt="Logo" className="h-12 w-12 object-contain" />
               <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
                 Abdul Malik P A
               </h3>

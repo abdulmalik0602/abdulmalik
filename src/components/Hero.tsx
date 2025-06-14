@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Code, Cloud, Users, Download, ArrowRight } from 'lucide-react';
+import Logo from '../assets/abdulmalik1.png';
 
 const Hero: React.FC = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -98,7 +99,7 @@ const Hero: React.FC = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img
-                  src="/abdulmalik1.png"
+                  src={Logo}
                   alt="Abdul Malik P A - Full Stack Developer"
                   className="w-full h-full object-cover object-top"
                 />

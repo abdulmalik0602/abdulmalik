@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
+import Logo from '../assets/logo.png';
 
 interface NavigationProps {
   activeSection: string;
@@ -55,7 +56,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
             whileHover={{ scale: 1.05 }}
           >
             <img
-              src="/logo.png" // replace with your actual image path
+              src={Logo}// replace with your actual image path
               alt="Logo"
               className="h-15 w-12 object-contain"
             />
