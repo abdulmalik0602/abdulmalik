@@ -19,6 +19,9 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
+    { id: 'education', label: 'Education' },
+    { id: 'certifications', label: 'Certifications' },
+    { id: 'volunteering', label: 'Volunteering' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -41,17 +44,18 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
           ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-lg'
           : 'bg-transparent'
-        }`}
+      }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <motion.div
+        <motion.div
             className="flex items-center space-x-2 text-xl font-bold text-primary-600 dark:text-primary-400"
             whileHover={{ scale: 1.05 }}
           >
@@ -64,15 +68,16 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors ${activeSection === item.id
+                className={`relative px-3 py-2 text-sm font-medium transition-colors ${
+                  activeSection === item.id
                     ? 'text-primary-600 dark:text-primary-400'
                     : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
-                  }`}
+                }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -85,7 +90,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
                 )}
               </motion.button>
             ))}
-
+            
             <motion.button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -97,7 +102,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
           </div>
 
           {/* Mobile Navigation Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="lg:hidden flex items-center space-x-4">
             <motion.button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -106,7 +111,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
             >
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </motion.button>
-
+            
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -118,7 +123,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
 
         {/* Mobile Navigation Menu */}
         <motion.div
-          className={`md:hidden overflow-hidden ${isOpen ? 'max-h-96' : 'max-h-0'}`}
+          className={`lg:hidden overflow-hidden ${isOpen ? 'max-h-96' : 'max-h-0'}`}
           initial={false}
           animate={{ height: isOpen ? 'auto' : 0 }}
           transition={{ duration: 0.3 }}
@@ -128,10 +133,11 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-2 rounded-lg transition-colors ${activeSection === item.id
+                className={`block w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  activeSection === item.id
                     ? 'bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400'
                     : 'hover:bg-gray-100 dark:hover:bg-gray-800'
-                  }`}
+                }`}
                 whileHover={{ x: 5 }}
               >
                 {item.label}

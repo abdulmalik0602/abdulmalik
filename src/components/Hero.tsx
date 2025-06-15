@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Code, Cloud, Users, Download, ArrowRight } from 'lucide-react';
+import { ChevronDown, Code, Cloud, Users, Download, ArrowRight, Github, Linkedin, Coffee } from 'lucide-react';
 import Logo from '../assets/abdulmalik1.png';
+
 
 const Hero: React.FC = () => {
   const [currentRole, setCurrentRole] = useState(0);
   const roles = [
     'Full Stack Developer',
-    'Cloud Native Enthusiast', 
-    'Team Leader',
-    'Code Optimizer'
+    'Front-End Expert', 
+    'Cloud Admin',
+    'Technical Architect'
   ];
 
   useEffect(() => {
@@ -25,6 +26,30 @@ const Hero: React.FC = () => {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const socialLinks = [
+    {
+      icon: Linkedin,
+      href: 'https://www.linkedin.com/in/p-a-abdul-malik/',
+      label: 'LinkedIn',
+      color: 'from-blue-600 to-blue-700',
+      hoverColor: 'hover:from-blue-700 hover:to-blue-800'
+    },
+    {
+      icon: Github,
+      href: 'https://github.com/abdulmalik0602',
+      label: 'GitHub',
+      color: 'from-gray-700 to-gray-800',
+      hoverColor: 'hover:from-gray-800 hover:to-gray-900'
+    },
+    {
+      icon: Coffee,
+      href: 'https://buymeacoffee.com/abdulmalik0602',
+      label: 'Buy me a Coffee',
+      color: 'from-yellow-500 to-orange-500',
+      hoverColor: 'hover:from-yellow-600 hover:to-orange-600'
+    }
+  ];
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
@@ -202,45 +227,37 @@ const Hero: React.FC = () => {
               "From stack to strategy — I own it."
             </motion.p>
 
+            {/* Social Links */}
             <motion.div
               className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
             >
-              <motion.div
-                className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg text-sm"
-                whileHover={{ scale: 1.05, y: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Code className="w-4 h-4 text-primary-600 dark:text-primary-400" />
-                <span className="text-gray-700 dark:text-gray-300">1.5+ Years Experience</span>
-              </motion.div>
-              
-              <motion.div
-                className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg text-sm"
-                whileHover={{ scale: 1.05, y: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Cloud className="w-4 h-4 text-secondary-600 dark:text-secondary-400" />
-                <span className="text-gray-700 dark:text-gray-300">Cloud Expert</span>
-              </motion.div>
-              
-              <motion.div
-                className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg text-sm"
-                whileHover={{ scale: 1.05, y: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Users className="w-4 h-4 text-accent-600 dark:text-accent-400" />
-                <span className="text-gray-700 dark:text-gray-300">Team Leader</span>
-              </motion.div>
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-3 px-6 py-3 bg-gradient-to-r ${social.color} ${social.hoverColor} text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-medium`}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                >
+                  <social.icon className="w-5 h-5" />
+                  <span className="text-sm">{social.label}</span>
+                </motion.a>
+              ))}
             </motion.div>
 
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
             >
               <motion.button
                 onClick={() => scrollToNext()}
@@ -267,7 +284,7 @@ const Hero: React.FC = () => {
               className="mt-6 flex justify-center lg:justify-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
             >
               <div className="flex items-center gap-2 px-4 py-2 bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full text-sm text-gray-600 dark:text-gray-400">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -281,7 +298,7 @@ const Hero: React.FC = () => {
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.6 }}
+          transition={{ duration: 1, delay: 1.8 }}
         >
           <motion.button
             onClick={scrollToNext}

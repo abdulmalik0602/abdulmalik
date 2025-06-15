@@ -1,15 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Briefcase, Users, Code, Award } from 'lucide-react';
+import { Calendar, MapPin, Briefcase, Users, Code, Award, Building } from 'lucide-react';
 
 const Experience: React.FC = () => {
   const experiences = [
     {
       id: 1,
-      company: 'Kadit Innovations',
-      position: 'Full Stack Developer',
-      duration: 'Jan 2023 - Present',
-      location: 'Remote',
+      company: 'KADIT Innovations',
+      position: 'Full-stack Developer',
+      duration: 'Sep 2024 - Present',
+      period: '10 mos',
+      location: 'Kadayanallur, Tamil Nadu, India',
       type: 'Full-time',
       description: 'Leading full-stack development initiatives with focus on microservices architecture and cloud-native solutions.',
       responsibilities: [
@@ -20,7 +21,7 @@ const Experience: React.FC = () => {
         'Managed Git repositories and established CI/CD pipelines',
         'Collaborated with cross-functional teams in agile development environment'
       ],
-      technologies: ['Java', 'Spring Boot', 'Flutter', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL'],
+      technologies: ['Nginx', 'Computer Science', 'Java', 'Spring Boot', 'Flutter', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL'],
       achievements: [
         'Reduced deployment time by 60% through automation',
         'Achieved 99.9% uptime for critical services',
@@ -31,28 +32,133 @@ const Experience: React.FC = () => {
     },
     {
       id: 2,
-      company: 'Previous Role',
-      position: 'Junior Developer',
-      duration: 'Jun 2022 - Dec 2022',
-      location: 'On-site',
-      type: 'Contract',
-      description: 'Started journey in software development with focus on backend technologies and database management.',
+      company: 'KADIT Innovations',
+      position: 'Flutter Developer',
+      duration: 'Dec 2023 - Dec 2024',
+      period: '1 yr 1 mo',
+      location: 'Kadayanallur, Tamil Nadu, India',
+      type: 'Full-time',
+      description: 'Specialized in cross-platform mobile application development using Flutter framework.',
       responsibilities: [
-        'Developed REST APIs using Spring Boot framework',
-        'Worked on database design and optimization',
-        'Participated in code reviews and testing processes',
-        'Collaborated with senior developers on complex features',
-        'Maintained and updated existing codebase',
-        'Learned and applied industry best practices'
+        'Developed cross-platform mobile applications using Flutter',
+        'Implemented responsive UI/UX designs for mobile platforms',
+        'Integrated REST APIs and real-time data synchronization',
+        'Optimized app performance for both iOS and Android platforms',
+        'Collaborated with design team for pixel-perfect implementations',
+        'Maintained code quality through testing and code reviews'
       ],
-      technologies: ['Java', 'Spring Boot', 'MySQL', 'Git', 'Jenkins'],
+      technologies: ['Android', 'Computer Science', 'Flutter', 'Dart', 'Firebase', 'REST APIs', 'SQLite'],
       achievements: [
-        'Successfully delivered first production feature within 2 weeks',
-        'Improved database query performance by 25%',
-        'Completed training on enterprise development practices',
-        'Received positive feedback for quick learning and adaptation'
+        'Delivered 5+ mobile applications with 4.8+ app store ratings',
+        'Reduced app loading time by 50% through optimization',
+        'Implemented offline-first architecture for better UX',
+        'Achieved 95% code reusability across platforms'
       ],
       color: 'from-green-500 to-teal-600'
+    },
+    {
+      id: 3,
+      company: 'KADIT Innovations',
+      position: 'Machine Learning / QA Intern',
+      duration: 'Jul 2023 - Sep 2023',
+      period: '3 mos',
+      location: 'Kadayanallur, Tamil Nadu, India',
+      type: 'Internship',
+      description: 'Gained hands-on experience in machine learning and quality assurance processes.',
+      responsibilities: [
+        'Developed machine learning models for data analysis',
+        'Performed quality assurance testing for software applications',
+        'Analyzed data patterns and created predictive models',
+        'Documented testing procedures and bug reports',
+        'Collaborated with development team on feature testing',
+        'Learned industry best practices in ML and QA'
+      ],
+      technologies: ['Computer Science', 'Career Development', 'Python', 'Machine Learning', 'Testing'],
+      achievements: [
+        'Built 3 ML models with 85%+ accuracy',
+        'Identified and resolved 50+ software bugs',
+        'Improved testing efficiency by 30%',
+        'Completed comprehensive ML training program'
+      ],
+      color: 'from-purple-500 to-pink-600'
+    },
+    {
+      id: 4,
+      company: 'Shiash Info Solutions Private Limited',
+      position: 'Full-stack Developer Intern',
+      duration: 'Dec 2022 - Mar 2023',
+      period: '4 mos',
+      location: 'Remote',
+      type: 'Internship',
+      description: 'Started journey in full-stack development with focus on web technologies and database management.',
+      responsibilities: [
+        'Developed web applications using modern frameworks',
+        'Worked on both frontend and backend development',
+        'Implemented database design and optimization',
+        'Participated in code reviews and testing processes',
+        'Collaborated with remote team members effectively',
+        'Learned agile development methodologies'
+      ],
+      technologies: ['Computer Science', 'Full-Stack Development', 'JavaScript', 'Node.js', 'React'],
+      achievements: [
+        'Successfully delivered first full-stack project',
+        'Improved database query performance by 25%',
+        'Completed training on modern web technologies',
+        'Received positive feedback for quick learning'
+      ],
+      color: 'from-orange-500 to-red-600'
+    },
+    {
+      id: 5,
+      company: 'Zetspire Technologies',
+      position: 'IoT Researcher',
+      duration: 'Nov 2022 - Dec 2022',
+      period: '2 mos',
+      location: 'Madurai, Tamil Nadu, India',
+      type: 'Internship',
+      description: 'Explored Internet of Things technologies and their practical applications.',
+      responsibilities: [
+        'Researched IoT technologies and applications',
+        'Developed prototypes using IoT sensors and devices',
+        'Analyzed data from connected devices',
+        'Documented research findings and recommendations',
+        'Collaborated with research team on IoT projects',
+        'Presented findings to technical stakeholders'
+      ],
+      technologies: ['Career Development', 'IoT', 'Arduino', 'Sensors', 'Data Analysis'],
+      achievements: [
+        'Completed 2 IoT research projects',
+        'Developed working IoT prototypes',
+        'Published research documentation',
+        'Gained expertise in embedded systems'
+      ],
+      color: 'from-teal-500 to-cyan-600'
+    },
+    {
+      id: 6,
+      company: 'WhiziFi Robotics Lab',
+      position: 'Robotics Engineer Trainee',
+      duration: 'Sep 2021 - Aug 2022',
+      period: '1 yr',
+      location: 'Hybrid',
+      type: 'Trainee',
+      description: 'Foundation training in robotics engineering and automation technologies.',
+      responsibilities: [
+        'Learned robotics fundamentals and programming',
+        'Worked on robotic system design and development',
+        'Programmed robotic controllers and sensors',
+        'Participated in robotics competitions and projects',
+        'Collaborated with engineering team on automation solutions',
+        'Developed problem-solving skills in robotics'
+      ],
+      technologies: ['Career Development', 'Robotics', 'Programming', 'Automation', 'Engineering'],
+      achievements: [
+        'Completed comprehensive robotics training',
+        'Built 3 functional robotic systems',
+        'Won 2nd place in robotics competition',
+        'Developed strong foundation in automation'
+      ],
+      color: 'from-indigo-500 to-purple-600'
     }
   ];
 
@@ -74,10 +180,10 @@ const Experience: React.FC = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-            Professional Experience
+            Professional Journey
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A journey of continuous growth, innovation, and technical excellence
+            A progressive career path from trainee to full-stack developer, marked by continuous growth and technical excellence
           </p>
         </motion.div>
 
@@ -109,13 +215,22 @@ const Experience: React.FC = () => {
                   >
                     {/* Header */}
                     <div className="flex flex-wrap items-start justify-between mb-6">
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                          {exp.position}
-                        </h3>
-                        <h4 className="text-xl text-primary-600 dark:text-primary-400 font-semibold mb-3">
-                          {exp.company}
-                        </h4>
+                      <div className="flex items-start gap-4">
+                        <motion.div
+                          className={`w-12 h-12 bg-gradient-to-r ${exp.color} rounded-xl flex items-center justify-center`}
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <Building className="w-6 h-6 text-white" />
+                        </motion.div>
+                        <div>
+                          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                            {exp.position}
+                          </h3>
+                          <h4 className="text-xl text-primary-600 dark:text-primary-400 font-semibold mb-3">
+                            {exp.company}
+                          </h4>
+                        </div>
                       </div>
                       <div className={`px-4 py-2 bg-gradient-to-r ${exp.color} text-white rounded-full text-sm font-medium`}>
                         {exp.type}
@@ -127,6 +242,7 @@ const Experience: React.FC = () => {
                       <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                         <Calendar className="w-4 h-4" />
                         <span className="text-sm">{exp.duration}</span>
+                        <span className="text-xs text-gray-500">({exp.period})</span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                         <MapPin className="w-4 h-4" />
@@ -166,7 +282,7 @@ const Experience: React.FC = () => {
                     {/* Technologies */}
                     <div className="mb-6">
                       <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        Technologies Used
+                        Technologies & Skills
                       </h5>
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech) => (
