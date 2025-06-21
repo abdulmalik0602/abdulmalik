@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Code, Coffee, Github, Linkedin } from 'lucide-react';
+import logo from '../assets/logo.png'
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -73,7 +74,7 @@ const Footer: React.FC = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img
-                  src="/logo.png"
+                  src={logo}
                   alt="Abdul Malik P A Logo"
                   className="w-full h-full object-contain"
                 />
@@ -189,7 +190,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-4">
               <div className="w-8 h-8 rounded-lg overflow-hidden">
                 <img
-                  src="/logo.png"
+                  src={logo}
                   alt="Abdul Malik P A Logo"
                   className="w-full h-full object-contain"
                 />

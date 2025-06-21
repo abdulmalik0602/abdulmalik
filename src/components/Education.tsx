@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Calendar, MapPin, Award, BookOpen, Star } from 'lucide-react';
+import svc from '../assets/svc.png';
+import sit from '../assets/sit.png';
 
 const Education: React.FC = () => {
   const educationData = [
@@ -11,7 +13,7 @@ const Education: React.FC = () => {
       duration: '2024 - Present',
       status: 'Pursuing',
       location: 'Tamil Nadu, India',
-      logo: '/svc.png',
+      logo: svc,
       description: 'Pursuing MBA to complement technical expertise with business acumen and leadership skills.',
       highlights: [
         'Strategic Management and Leadership',
@@ -30,7 +32,7 @@ const Education: React.FC = () => {
       status: 'Completed',
       grade: '8.22 CGPA',
       location: 'Tamil Nadu, India',
-      logo: '/sit.png',
+      logo: sit,
       description: 'Comprehensive computer science education with strong foundation in programming, algorithms, and software engineering.',
       highlights: [
         'Data Structures and Algorithms',

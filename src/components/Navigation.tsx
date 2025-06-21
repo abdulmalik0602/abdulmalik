@@ -75,7 +75,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <img
-                src='../assets/logo.png'
+                src={logo}
                 alt="Abdul Malik P A Logo"
                 className="w-full h-full object-contain"
               />

@@ -1,6 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Briefcase, Users, Code, Award } from 'lucide-react';
+import kadit from '../assets/kadit.png';
+import shiash from '../assets/shiash.png';
+import zetspire from '../assets/zetspire.png';
+import whizifi from '../assets/whizifi.png';
 
 const Experience: React.FC = () => {
   const experiences = [
@@ -12,7 +16,7 @@ const Experience: React.FC = () => {
       period: '10 mos',
       location: 'Kadayanallur, Tamil Nadu, India',
       type: 'Full-time',
-      logo: "./assets/kadit.png",
+      logo: kadit,
       description: 'Leading full-stack development initiatives with focus on microservices architecture and cloud-native solutions.',
       responsibilities: [
         'Developed and maintained microservices-based SaaS platform serving 10,000+ users',
@@ -39,7 +43,7 @@ const Experience: React.FC = () => {
       period: '1 yr 1 mo',
       location: 'Kadayanallur, Tamil Nadu, India',
       type: 'Full-time',
-      logo: "../assets/kadit.png",
+      logo:kadit,
       description: 'Specialized in cross-platform mobile application development using Flutter framework.',
       responsibilities: [
         'Developed cross-platform mobile applications using Flutter',
@@ -66,7 +70,7 @@ const Experience: React.FC = () => {
       period: '3 mos',
       location: 'Kadayanallur, Tamil Nadu, India',
       type: 'Internship',
-      logo: "../assets/kadit.png",
+      logo: kadit,
       description: 'Gained hands-on experience in machine learning and quality assurance processes.',
       responsibilities: [
         'Developed machine learning models for data analysis',
@@ -93,7 +97,7 @@ const Experience: React.FC = () => {
       period: '4 mos',
       location: 'Remote',
       type: 'Internship',
-      logo: '../assets/shiash.png',
+      logo: shiash,
       description: 'Started journey in full-stack development with focus on web technologies and database management.',
       responsibilities: [
         'Developed web applications using modern frameworks',
@@ -120,7 +124,7 @@ const Experience: React.FC = () => {
       period: '2 mos',
       location: 'Madurai, Tamil Nadu, India',
       type: 'Internship',
-      logo: "../assets/zetspire.png", // Using placeholder as no specific logo provided
+      logo: zetspire, // Using placeholder as no specific logo provided
       description: 'Explored Internet of Things technologies and their practical applications.',
       responsibilities: [
         'Researched IoT technologies and applications',
@@ -147,7 +151,7 @@ const Experience: React.FC = () => {
       period: '1 yr',
       location: 'Hybrid',
       type: 'Trainee',
-      logo: '../assets/whizifi.png',
+      logo: whizifi,
       description: 'Foundation training in robotics engineering and automation technologies.',
       responsibilities: [
         'Learned robotics fundamentals and programming',
@@ -214,7 +218,7 @@ const Experience: React.FC = () => {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <img
-                      src="/logo.png"
+                      src={exp.logo}
                       alt={`${exp.company} logo`}
                       className="w-full h-full object-contain"
                     />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle, Github, Linkedin, Coffee } from 'lucide-react';
+import logo from '../assets/logo.png'
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -117,7 +118,7 @@ const Contact: React.FC = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img
-                  src="/logo.png"
+                  src={logo}
                   alt="Abdul Malik P A Logo"
                   className="w-full h-full object-contain"
                 />
@@ -127,7 +128,7 @@ const Contact: React.FC = () => {
                   Abdul Malik P A
                 </h3>
                 <p className="text-primary-600 dark:text-primary-400 font-semibold">
-                  Full Stack Developer & Team Leader
+                  Full Stack Developer & Technical Architect
                 </p>
               </div>
             </motion.div>
