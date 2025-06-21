@@ -23,9 +23,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('theme') === 'dark' ||
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches) ||
+        !localStorage.getItem('theme'); // Default to dark if no preference is set
     }
-    return false;
+    return true; // Default to dark mode on server-side rendering
   });
 
   useEffect(() => {
