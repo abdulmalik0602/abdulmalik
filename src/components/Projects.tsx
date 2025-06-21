@@ -8,10 +8,169 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
+      title: 'Daily Health Partner - A pocket medical Assistant',
+      description: 'Feature-rich offline music player with custom equalizer and album management capabilities.',
+      fullDescription: 'A comprehensive music player application inspired by Spotify, built with Flutter. Features include offline music playback, custom equalizer, playlist management, album organization, and a modern, intuitive user interface. The app provides a seamless music experience with advanced audio controls.',
+      image: 'https://wallpapers.com/images/hd/medical-doctor-clinical-symbols-2nsmzg70r0to981e.jpg',
+      technologies: ['Flutter', 'Dart', 'SQLite', 'Audio Players'],
+      category: 'Mobile',
+      github: 'https://github.com/abdulmalik0602',
+      live: '#',
+      highlights: [
+        'Offline music playback capabilities',
+        'Custom equalizer with multiple presets',
+        'Advanced playlist and album management',
+        'Modern and intuitive user interface',
+        'Cross-platform compatibility (iOS/Android)',
+        'Local storage optimization for music files'
+      ],
+      color: 'from-green-500 to-emerald-600'
+    },
+     {
+      id: 2,
+      title: 'Spotify Clone - Offline Music Player',
+      description: 'Feature-rich offline music player with custom equalizer and album management capabilities.',
+      fullDescription: 'A comprehensive music player application inspired by Spotify, built with Flutter. Features include offline music playback, custom equalizer, playlist management, album organization, and a modern, intuitive user interface. The app provides a seamless music experience with advanced audio controls.',
+      image: 'https://images.pexels.com/photos/3756766/pexels-photo-3756766.jpeg?auto=compress&cs=tinysrgb&w=800',
+      technologies: ['Flutter', 'Dart', 'SQLite', 'Audio Players'],
+      category: 'Mobile',
+      github: 'https://github.com/abdulmalik0602',
+      live: '#',
+      highlights: [
+        'Offline music playback capabilities',
+        'Custom equalizer with multiple presets',
+        'Advanced playlist and album management',
+        'Modern and intuitive user interface',
+        'Cross-platform compatibility (iOS/Android)',
+        'Local storage optimization for music files'
+      ],
+      color: 'from-green-500 to-emerald-600'
+    },
+     {
+      id: 3,
+      title: 'Learning-Based Presaging Control for Linear Process',
+      description: 'Enables automated, accurate, and efficient management of water treatment processes using predictive modeling and AI, reducing manual intervention and improving sustainability.',
+      fullDescription: 'Developed a smart wastewater treatment system that uses machine learning-based predictive models for real-time water quality estimation and plant control. Replaces traditional manual processes with automation and learning-based system identification, reducing human resource needs and improving environmental safety. The model uses quadratic optimization to maintain stability and reduce computational complexity while managing wastewater treatment dynamically.',
+      image: 'https://images2.alphacoders.com/961/961362.jpg',
+      technologies: ['Java', 'J2EE', 'MySQL', 'Apache Tomcat','Eclipse'],
+      category: 'AI/ML',
+      github: 'https://github.com/abdulmalik0602',
+      live: '#',
+      highlights: [
+        'Real-Time Water Quality Monitoring using machine learning algorithms',
+        'Predictive Modeling to estimate water parameters and control treatment processes',
+        ' Automated System Control with minimal human intervention',
+        'Quadratic Optimization for efficient and stable system performance',
+        ' Dynamic Model Adjustment with self-growing structure (no neuron deletion)',
+        ' Reduction of Environmental Impact by improving wastewater treatment'
+      ],
+      color: 'from-blue-500 to-teal-600'
+    },
+    {
+      id: 4,
+      title: 'Quran App - Islamic Suite',
+      description: 'Comprehensive Islamic application with Quran recitations, prayer times, translations, and live Mecca & Madina feed.',
+      fullDescription: 'A complete Islamic companion app providing Quran recitations, prayer times, translations in multiple languages, and live feeds from Mecca and Madina. The app includes Hijri calendar, Qibla direction, and various Islamic utilities for daily religious practices.',
+      image: 'https://images.wallpaperscraft.com/image/single/arabic_islam_calligraphy_31410_3840x2160.jpg',
+      technologies: ['Flutter', 'Dart', 'Various APIs', 'Quran Recitation API', 'Hijri Calendar API', 'Live Streaming'],
+      category: 'Mobile',
+      github: 'https://github.com/abdulmalik0602',
+      live: '#',
+      highlights: [
+        'Complete Quran with multiple recitations',
+        'Prayer times with location-based calculations',
+        'Multi-language translations (Tamil/English/Hindi)',
+        'Live Mecca and Madina streaming',
+        'Hijri calendar integration',
+        'Qibla direction and Islamic utilities'
+      ],
+      color: 'from-teal-500 to-cyan-600'
+    },
+    {
+      id: 5,
+      title: 'School Bus Tracker',
+      description: 'Real-time school bus tracking system with admin, driver, and parent interfaces for student safety and monitoring.',
+      fullDescription: 'A comprehensive school bus tracking solution designed to enhance student safety and provide peace of mind to parents. The system includes real-time GPS tracking, automated notifications, student attendance management, and emergency alert systems.',
+      image: 'https://wallpapers.com/images/hd/school-bus-with-children-student-passenger-8mklbg790d1io892.jpg',
+      technologies: ['Flutter', 'Google Maps API', 'Firebase', 'Real-time Database', 'Push Notifications'],
+      category: 'Education',
+      github: 'https://github.com/abdulmalik0602',
+      live: '#',
+      highlights: [
+        'Real-time GPS tracking for buses',
+        'Multi-user interface (Admin/Driver/Parent)',
+        'Student attendance management',
+        'Automated arrival/departure notifications',
+        'Emergency alert system',
+        'Route optimization and management'
+      ],
+      color: 'from-yellow-500 to-orange-600'
+    },
+    {
+      id: 6,
+      title: 'Agro Flore – IoT Smart Farming',
+      description: 'IoT-based smart farming solution with soil monitoring, crop management, and weather forecasting capabilities.',
+      fullDescription: 'An innovative IoT-based smart farming platform that revolutionizes agricultural practices. The system provides real-time soil and nutrient monitoring, automated irrigation control, crop health analysis, and weather forecasting to optimize farming operations.',
+      image: 'https://images.pexels.com/photos/2132227/pexels-photo-2132227.jpeg?auto=compress&cs=tinysrgb&w=800',
+      technologies: ['Firebase', 'ThingSpeak', 'Embedded C', 'Python', 'IoT Sensors', 'Weather API'],
+      category: 'IoT',
+      github: 'https://github.com/abdulmalik0602',
+      live: 'https://agro-flore.web.app/#/',
+      highlights: [
+        'Real-time soil and nutrient monitoring',
+        'Automated irrigation control system',
+        'Crop health analysis and recommendations',
+        'Weather forecasting integration',
+        'IoT sensor network management',
+        'Data analytics and reporting dashboard'
+      ],
+      color: 'from-green-600 to-lime-600'
+    },
+    {
+      id: 7,
+      title: 'Artisan Harbor – Handicraft E-Commerce',
+      description: 'Marketplace platform for rural artisans with product management, order processing, and secure payment integration.',
+      fullDescription: 'A specialized e-commerce platform designed to empower rural artisans by providing them with a digital marketplace. The platform includes product showcase, inventory management, order processing, customer communication, and integrated payment solutions.',
+      image: 'https://images.pexels.com/photos/352899/pexels-photo-352899.jpeg?cs=srgb&dl=pexels-digitalbuggu-352899.jpg&fm=jpg',
+      technologies: ['Flutter', 'Firebase', 'Firestore', 'Payment Gateway', 'Cloud Storage'],
+      category: 'E-Commerce',
+      github: 'https://github.com/abdulmalik0602',
+      live: '#',
+      highlights: [
+        'Artisan-focused marketplace design',
+        'Product showcase with high-quality images',
+        'Inventory and order management',
+        'Secure payment processing',
+        'Customer review and rating system',
+        'Multi-language support for rural users'
+      ],
+      color: 'from-pink-500 to-rose-600'
+    },
+     {
+      id: 8,
+      title: 'Car Price Predction',
+      description: 'Helps users estimate the fair market value of a car based on key attributes, enabling informed buying or selling decisions without relying on guesswork.',
+      fullDescription: 'Developed a machine learning-powered car price prediction tool with a sleek, user-friendly web interface using Flask. The model predicts car prices based on attributes like make, model, year, mileage, etc. The backend efficiently handles CSV-based data input through APIs and serves accurate, data-driven price estimates.',
+      image: 'https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg',
+      technologies: ['Flask', 'HTML', 'CSS', 'Machine Learning', 'CSV'],
+      category: 'AI/ML',
+      github: 'https://github.com/abdulmalik0602',
+      live: '#',
+      highlights: [
+        'Trained ML model for regression-based price prediction',
+        'Web UI built with Flask',
+        'API to fetch car data dynamically from CSV',
+        'Real-time price estimation for car buyers/sellers',
+        'Built with scalability in mind for future data integration',
+      ],
+      color: 'from-blue-500 to-teal-600'
+    },
+     {
+      id: 9,
       title: 'Transport Management Platform',
       description: 'Corporate transport system for Singapore-based firm with GPS-based route management, driver tracking, and admin controls.',
       fullDescription: 'A comprehensive transport management platform built for a Singapore-based corporate client. The system includes GPS-based route optimization, real-time driver tracking, passenger management, and comprehensive admin controls. Features include route planning, live tracking, automated notifications, and detailed analytics dashboard.',
-      image: 'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://wallpapercat.com/w/full/c/c/1/35896-3840x2160-desktop-4k-singapore-background.jpg',
       technologies: ['Flutter', 'Java', 'Spring Boot', 'PostgreSQL', 'AWS Lambda', 'Cloudflare', 'Mapbox API'],
       category: 'Enterprise',
       isConfidential: true,
@@ -27,7 +186,7 @@ const Projects: React.FC = () => {
       color: 'from-blue-500 to-purple-600'
     },
     {
-      id: 2,
+      id: 10,
       title: 'Healthcare SaaS Platform',
       description: 'Unified SaaS console enabling hospitals and clinics to manage electronic records, appointments, and patient analytics.',
       fullDescription: 'A comprehensive healthcare SaaS platform designed to modernize hospital and clinic operations. The platform provides electronic health records management, appointment scheduling, patient analytics, and telemedicine capabilities. Built with microservices architecture and deployed on Kubernetes for scalability.',
@@ -47,7 +206,7 @@ const Projects: React.FC = () => {
       color: 'from-green-500 to-teal-600'
     },
     {
-      id: 3,
+      id: 11,
       title: 'Community People Management System',
       description: 'Tamil-based local community CRM platform managing user identity, messaging, payments, and local events.',
       fullDescription: 'A specialized community management system designed for Tamil-speaking local communities. The platform provides user identity management, community messaging, payment processing, and local event organization. Features include multi-language support, payment gateway integration, and SMS notifications.',
@@ -67,11 +226,11 @@ const Projects: React.FC = () => {
       color: 'from-orange-500 to-red-600'
     },
     {
-      id: 4,
-      title: 'Biologica – Medical Research Console',
+      id: 12,
+      title: 'Biological – Medical Research Console',
       description: 'Web-based bioinformatics research portal for US-based antibody research company with phosphosite visualizations and graph-based data models.',
       fullDescription: 'A cutting-edge bioinformatics research platform developed for a US-based antibody research company. The platform modernizes phosphosite visualizations and implements graph-based data models for complex biological data analysis. Features include interactive data visualization, research workflow management, and collaborative tools.',
-      image: 'https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://wallpapercat.com/w/full/3/f/3/1323947-3840x2160-desktop-4k-biology-wallpaper.jpg',
       technologies: ['Vue.js', 'TypeScript', 'Bit', 'Kedro', 'Neo4j', 'GraphQL', 'Apollo', 'Strawberry', 'ArgoCD', 'Nightingale', 'AWS', 'Kubernetes', 'Vuetify', 'Jira'],
       category: 'Research',
       isConfidential: true,
@@ -86,109 +245,9 @@ const Projects: React.FC = () => {
       ],
       color: 'from-purple-500 to-pink-600'
     },
-    {
-      id: 5,
-      title: 'Spotify Clone - Offline Music Player',
-      description: 'Feature-rich offline music player with custom equalizer and album management capabilities.',
-      fullDescription: 'A comprehensive music player application inspired by Spotify, built with Flutter. Features include offline music playback, custom equalizer, playlist management, album organization, and a modern, intuitive user interface. The app provides a seamless music experience with advanced audio controls.',
-      image: 'https://images.pexels.com/photos/3756766/pexels-photo-3756766.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Flutter', 'Dart', 'SQLite', 'Audio Players'],
-      category: 'Mobile',
-      github: 'https://github.com/abdulmalik0602',
-      live: 'https://demo.musicplayer.com',
-      highlights: [
-        'Offline music playback capabilities',
-        'Custom equalizer with multiple presets',
-        'Advanced playlist and album management',
-        'Modern and intuitive user interface',
-        'Cross-platform compatibility (iOS/Android)',
-        'Local storage optimization for music files'
-      ],
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      id: 6,
-      title: 'Quran App - Islamic Suite',
-      description: 'Comprehensive Islamic application with Quran recitations, prayer times, translations, and live Mecca & Madina feed.',
-      fullDescription: 'A complete Islamic companion app providing Quran recitations, prayer times, translations in multiple languages, and live feeds from Mecca and Madina. The app includes Hijri calendar, Qibla direction, and various Islamic utilities for daily religious practices.',
-      image: 'https://images.pexels.com/photos/8111357/pexels-photo-8111357.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Flutter', 'Dart', 'Various APIs', 'Quran Recitation API', 'Hijri Calendar API', 'Live Streaming'],
-      category: 'Mobile',
-      github: 'https://github.com/abdulmalik0602',
-      live: 'https://play.google.com/store',
-      highlights: [
-        'Complete Quran with multiple recitations',
-        'Prayer times with location-based calculations',
-        'Multi-language translations (Tamil/English/Hindi)',
-        'Live Mecca and Madina streaming',
-        'Hijri calendar integration',
-        'Qibla direction and Islamic utilities'
-      ],
-      color: 'from-teal-500 to-cyan-600'
-    },
-    {
-      id: 7,
-      title: 'School Bus Tracker',
-      description: 'Real-time school bus tracking system with admin, driver, and parent interfaces for student safety and monitoring.',
-      fullDescription: 'A comprehensive school bus tracking solution designed to enhance student safety and provide peace of mind to parents. The system includes real-time GPS tracking, automated notifications, student attendance management, and emergency alert systems.',
-      image: 'https://images.pexels.com/photos/159658/school-bus-vehicle-children-159658.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Flutter', 'Google Maps API', 'Firebase', 'Real-time Database', 'Push Notifications'],
-      category: 'Education',
-      github: 'https://github.com/abdulmalik0602',
-      live: 'https://demo.schoolbustracker.com',
-      highlights: [
-        'Real-time GPS tracking for buses',
-        'Multi-user interface (Admin/Driver/Parent)',
-        'Student attendance management',
-        'Automated arrival/departure notifications',
-        'Emergency alert system',
-        'Route optimization and management'
-      ],
-      color: 'from-yellow-500 to-orange-600'
-    },
-    {
-      id: 8,
-      title: 'Agro Flore – IoT Smart Farming',
-      description: 'IoT-based smart farming solution with soil monitoring, crop management, and weather forecasting capabilities.',
-      fullDescription: 'An innovative IoT-based smart farming platform that revolutionizes agricultural practices. The system provides real-time soil and nutrient monitoring, automated irrigation control, crop health analysis, and weather forecasting to optimize farming operations.',
-      image: 'https://images.pexels.com/photos/2132227/pexels-photo-2132227.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Firebase', 'ThingSpeak', 'Embedded C', 'Python', 'IoT Sensors', 'Weather API'],
-      category: 'IoT',
-      github: 'https://github.com/abdulmalik0602',
-      live: 'https://demo.agroflore.com',
-      highlights: [
-        'Real-time soil and nutrient monitoring',
-        'Automated irrigation control system',
-        'Crop health analysis and recommendations',
-        'Weather forecasting integration',
-        'IoT sensor network management',
-        'Data analytics and reporting dashboard'
-      ],
-      color: 'from-green-600 to-lime-600'
-    },
-    {
-      id: 9,
-      title: 'Artisan Harbor – Handicraft E-Commerce',
-      description: 'Marketplace platform for rural artisans with product management, order processing, and secure payment integration.',
-      fullDescription: 'A specialized e-commerce platform designed to empower rural artisans by providing them with a digital marketplace. The platform includes product showcase, inventory management, order processing, customer communication, and integrated payment solutions.',
-      image: 'https://images.pexels.com/photos/1070945/pexels-photo-1070945.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Flutter', 'Firebase', 'Firestore', 'Payment Gateway', 'Cloud Storage'],
-      category: 'E-Commerce',
-      github: 'https://github.com/abdulmalik0602',
-      live: 'https://demo.artisanharbor.com',
-      highlights: [
-        'Artisan-focused marketplace design',
-        'Product showcase with high-quality images',
-        'Inventory and order management',
-        'Secure payment processing',
-        'Customer review and rating system',
-        'Multi-language support for rural users'
-      ],
-      color: 'from-pink-500 to-rose-600'
-    }
   ];
 
-  const categories = ['All', 'Enterprise', 'Healthcare', 'Community', 'Research', 'Mobile', 'Education', 'IoT', 'E-Commerce'];
+  const categories = ['All', 'Enterprise', 'Healthcare', 'Community', 'Research', 'Mobile', 'Education', 'IoT', 'E-Commerce',"AI/ML"];
   const [activeCategory, setActiveCategory] = useState('All');
 
   const filteredProjects = activeCategory === 'All' 
