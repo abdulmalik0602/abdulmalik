@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
+import logo from '../assets/logo.png'
 
 interface NavigationProps {
   activeSection: string;
@@ -74,7 +75,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <img
-                src="../assets/logo.png"
+                src='../assets/logo.png'
                 alt="Abdul Malik P A Logo"
                 className="w-full h-full object-contain"
               />
