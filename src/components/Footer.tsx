@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Code, Coffee, Github, Linkedin } from 'lucide-react';
-import Logo from '../assets/logo.png';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -16,21 +15,21 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    {
-      icon: Github,
-      href: 'https://github.com/abdulmalik0602',
+    { 
+      icon: Github, 
+      href: 'https://github.com/abdulmalik0602', 
       label: 'GitHub',
       color: 'hover:text-gray-300'
     },
-    {
-      icon: Linkedin,
-      href: 'https://www.linkedin.com/in/p-a-abdul-malik/',
+    { 
+      icon: Linkedin, 
+      href: 'https://www.linkedin.com/in/p-a-abdul-malik/', 
       label: 'LinkedIn',
       color: 'hover:text-blue-400'
     },
-    {
-      icon: Coffee,
-      href: 'https://buymeacoffee.com/abdulmalik0602',
+    { 
+      icon: Coffee, 
+      href: 'https://buymeacoffee.com/abdulmalik0602', 
       label: 'Buy me a Coffee',
       color: 'hover:text-yellow-400'
     }
@@ -38,6 +37,13 @@ const Footer: React.FC = () => {
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId.replace('#', ''));
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToHome = () => {
+    const element = document.getElementById('home');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -54,15 +60,35 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-3 mb-4">
-              <img src={Logo} alt="Logo" className="h-12 w-12 object-contain" />
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-                Abdul Malik P A
-              </h3>
-            </div>
+            {/* Logo and Brand */}
+            <motion.button
+              onClick={scrollToHome}
+              className="flex items-center gap-3 mb-6 group"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <motion.div
+                className="w-12 h-12 rounded-xl overflow-hidden"
+                whileHover={{ rotate: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img
+                  src="/logo.png"
+                  alt="Abdul Malik P A Logo"
+                  className="w-full h-full object-contain"
+                />
+              </motion.div>
+              <div>
+                <h3 className="text-xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent group-hover:from-primary-300 group-hover:to-secondary-300 transition-all">
+                  Abdul Malik P A
+                </h3>
+                <p className="text-sm text-gray-400">Full Stack Developer</p>
+              </div>
+            </motion.button>
+            
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Full Stack Developer passionate about creating innovative solutions and
-              leading teams to deliver exceptional results. Specializing in cloud-native
+              Full Stack Developer passionate about creating innovative solutions and 
+              leading teams to deliver exceptional results. Specializing in cloud-native 
               applications and microservices architecture.
             </p>
             <div className="flex items-center gap-2 text-sm text-gray-400">
@@ -125,7 +151,7 @@ const Footer: React.FC = () => {
                 +91 9087035132
               </motion.a>
               <p className="text-gray-400">Kadayanallur, Tenkasi, Tamil Nadu, India</p>
-
+              
               {/* Social Links */}
               <div className="flex gap-4 pt-4">
                 {socialLinks.map((social, index) => (
@@ -160,9 +186,18 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} Abdul Malik P A. All rights reserved.
-            </p>
+            <div className="flex items-center gap-4">
+              <div className="w-8 h-8 rounded-lg overflow-hidden">
+                <img
+                  src="/logo.png"
+                  alt="Abdul Malik P A Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <p className="text-gray-400 text-sm">
+                © {currentYear} Abdul Malik P A. All rights reserved.
+              </p>
+            </div>
             <div className="flex items-center gap-6 text-sm text-gray-400">
               <motion.button
                 className="hover:text-primary-400 transition-colors"

@@ -11,6 +11,7 @@ const Education: React.FC = () => {
       duration: '2024 - Present',
       status: 'Pursuing',
       location: 'Tamil Nadu, India',
+      logo: '/svc.png',
       description: 'Pursuing MBA to complement technical expertise with business acumen and leadership skills.',
       highlights: [
         'Strategic Management and Leadership',
@@ -29,6 +30,7 @@ const Education: React.FC = () => {
       status: 'Completed',
       grade: '8.22 CGPA',
       location: 'Tamil Nadu, India',
+      logo: '/sit.png',
       description: 'Comprehensive computer science education with strong foundation in programming, algorithms, and software engineering.',
       highlights: [
         'Data Structures and Algorithms',
@@ -113,92 +115,84 @@ const Education: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Education Timeline */}
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-600 to-secondary-600 transform md:-translate-x-1/2" />
-
-          {/* Education Cards */}
-          <div className="space-y-12">
-            {educationData.map((edu, index) => (
-              <motion.div
-                key={edu.id}
-                className={`flex flex-col md:flex-row items-start gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-white dark:bg-gray-900 border-4 border-primary-600 rounded-full transform md:-translate-x-1/2 -translate-y-2" />
-
-                {/* Content Card */}
-                <div className={`flex-1 ml-12 md:ml-0 ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
+        {/* Education Cards */}
+        <div className="grid gap-8 lg:gap-12">
+          {educationData.map((edu, index) => (
+            <motion.div
+              key={edu.id}
+              className="bg-gray-50 dark:bg-gray-800 rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+                {/* Left Column - Institution Logo and Meta */}
+                <div className="lg:w-1/4 flex flex-col items-center lg:items-start">
                   <motion.div
-                    className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-                    whileHover={{ y: -5 }}
+                    className="w-24 h-24 mb-4 rounded-2xl overflow-hidden shadow-lg bg-white p-3"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
-                    {/* Header */}
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="flex items-start gap-4">
-                        <motion.div
-                          className={`w-16 h-16 bg-gradient-to-r ${edu.color} rounded-2xl flex items-center justify-center`}
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <edu.icon className="w-8 h-8 text-white" />
-                        </motion.div>
-                        <div>
-                          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                            {edu.degree}
-                          </h3>
-                          <h4 className="text-lg text-primary-600 dark:text-primary-400 font-semibold mb-2">
-                            {edu.institution}
-                          </h4>
-                          {edu.grade && (
-                            <div className="flex items-center gap-2 mb-2">
-                              <Award className="w-4 h-4 text-yellow-500" />
-                              <span className="text-yellow-600 dark:text-yellow-400 font-semibold">
-                                Grade: {edu.grade}
-                              </span>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                      <div className={`px-4 py-2 bg-gradient-to-r ${edu.color} text-white rounded-full text-sm font-medium`}>
-                        {edu.status}
-                      </div>
+                    <img
+                      src={edu.logo}
+                      alt={`${edu.institution} logo`}
+                      className="w-full h-full object-contain"
+                    />
+                  </motion.div>
+                  
+                  <div className="text-center lg:text-left space-y-2">
+                    <div className={`px-4 py-2 bg-gradient-to-r ${edu.color} text-white rounded-full text-sm font-medium inline-block`}>
+                      {edu.status}
                     </div>
-
-                    {/* Meta Info */}
-                    <div className="flex flex-wrap gap-4 mb-6">
-                      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                    <div className="flex flex-col gap-1 text-sm text-gray-600 dark:text-gray-400">
+                      <div className="flex items-center gap-2 justify-center lg:justify-start">
                         <Calendar className="w-4 h-4" />
-                        <span className="text-sm">{edu.duration}</span>
+                        <span>{edu.duration}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                      <div className="flex items-center gap-2 justify-center lg:justify-start">
                         <MapPin className="w-4 h-4" />
-                        <span className="text-sm">{edu.location}</span>
+                        <span className="text-xs">{edu.location}</span>
                       </div>
+                      {edu.grade && (
+                        <div className="flex items-center gap-2 justify-center lg:justify-start">
+                          <Award className="w-4 h-4 text-yellow-500" />
+                          <span className="text-yellow-600 dark:text-yellow-400 font-semibold text-sm">
+                            {edu.grade}
+                          </span>
+                        </div>
+                      )}
                     </div>
+                  </div>
+                </div>
 
-                    {/* Description */}
-                    <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                {/* Right Column - Content */}
+                <div className="lg:w-3/4">
+                  <div className="mb-6">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                      {edu.degree}
+                    </h3>
+                    <h4 className="text-lg md:text-xl text-primary-600 dark:text-primary-400 font-semibold mb-4">
+                      {edu.institution}
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                       {edu.description}
                     </p>
+                  </div>
 
+                  {/* Highlights and Achievements in Grid */}
+                  <div className="grid md:grid-cols-2 gap-6">
                     {/* Highlights */}
-                    <div className="mb-6">
+                    <div>
                       <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                         Key Areas of Study
                       </h5>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {edu.highlights.map((highlight, idx) => (
+                      <div className="space-y-2">
+                        {edu.highlights.slice(0, 4).map((highlight, idx) => (
                           <motion.div
                             key={idx}
-                            className="flex items-start gap-3 p-3 bg-white dark:bg-gray-900 rounded-lg"
+                            className="flex items-start gap-3"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -219,11 +213,11 @@ const Education: React.FC = () => {
                         <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                           Academic Achievements
                         </h5>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                          {edu.achievements.map((achievement, idx) => (
+                        <div className="space-y-2">
+                          {edu.achievements.slice(0, 4).map((achievement, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-start gap-3 p-3 bg-white dark:bg-gray-900 rounded-lg"
+                              className="flex items-start gap-2"
                               initial={{ opacity: 0, scale: 0.9 }}
                               whileInView={{ opacity: 1, scale: 1 }}
                               viewport={{ once: true }}
@@ -238,11 +232,11 @@ const Education: React.FC = () => {
                         </div>
                       </div>
                     )}
-                  </motion.div>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Learning Philosophy */}

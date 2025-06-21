@@ -103,6 +103,35 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
+            {/* Brand Section with Logo */}
+            <motion.div
+              className="flex items-center gap-4 p-6 bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.div
+                className="w-16 h-16 rounded-xl overflow-hidden"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img
+                  src="/logo.png"
+                  alt="Abdul Malik P A Logo"
+                  className="w-full h-full object-contain"
+                />
+              </motion.div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  Abdul Malik P A
+                </h3>
+                <p className="text-primary-600 dark:text-primary-400 font-semibold">
+                  Full Stack Developer & Team Leader
+                </p>
+              </div>
+            </motion.div>
+
             <div>
               <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
                 Get in Touch
@@ -133,9 +162,11 @@ const Contact: React.FC = () => {
                     <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
-                    <div>
+                    <div className="flex-1 min-w-0">
                       <p className="text-sm text-gray-500 dark:text-gray-400">{info.label}</p>
-                      <p className="text-lg font-semibold text-gray-900 dark:text-white">{info.value}</p>
+                      <p className="text-lg font-semibold text-gray-900 dark:text-white break-words">
+                        {info.value}
+                      </p>
                     </div>
                   </motion.a>
                 </motion.div>
@@ -144,26 +175,26 @@ const Contact: React.FC = () => {
 
             {/* Social Links */}
             <div className="pt-8">
-              <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+              <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                 Connect with me
               </h4>
-              <div className="flex gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center transition-colors group ${social.color}`}
-                    whileHover={{ scale: 1.1, y: -2 }}
+                    className={`flex items-center justify-center gap-3 p-4 bg-gray-100 dark:bg-gray-800 rounded-xl transition-colors group ${social.color} text-center`}
+                    whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    title={social.label}
                   >
-                    <social.icon className="w-5 h-5" />
+                    <social.icon className="w-6 h-6 flex-shrink-0" />
+                    <span className="font-medium text-sm sm:text-base">{social.label}</span>
                   </motion.a>
                 ))}
               </div>
@@ -177,7 +208,7 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 md:p-8">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 Send a Message
               </h3>
@@ -189,7 +220,7 @@ const Contact: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
+                  <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
                   <span className="text-green-700 dark:text-green-300">
                     Thank you! Your message has been sent successfully.
                   </span>
@@ -197,7 +228,7 @@ const Contact: React.FC = () => {
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

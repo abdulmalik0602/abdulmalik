@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Briefcase, Users, Code, Award, Building } from 'lucide-react';
+import { Calendar, MapPin, Briefcase, Users, Code, Award } from 'lucide-react';
 
 const Experience: React.FC = () => {
   const experiences = [
@@ -12,6 +12,7 @@ const Experience: React.FC = () => {
       period: '10 mos',
       location: 'Kadayanallur, Tamil Nadu, India',
       type: 'Full-time',
+      logo: "./assets/kadit.png",
       description: 'Leading full-stack development initiatives with focus on microservices architecture and cloud-native solutions.',
       responsibilities: [
         'Developed and maintained microservices-based SaaS platform serving 10,000+ users',
@@ -38,6 +39,7 @@ const Experience: React.FC = () => {
       period: '1 yr 1 mo',
       location: 'Kadayanallur, Tamil Nadu, India',
       type: 'Full-time',
+      logo: "../assets/kadit.png",
       description: 'Specialized in cross-platform mobile application development using Flutter framework.',
       responsibilities: [
         'Developed cross-platform mobile applications using Flutter',
@@ -64,6 +66,7 @@ const Experience: React.FC = () => {
       period: '3 mos',
       location: 'Kadayanallur, Tamil Nadu, India',
       type: 'Internship',
+      logo: "../assets/kadit.png",
       description: 'Gained hands-on experience in machine learning and quality assurance processes.',
       responsibilities: [
         'Developed machine learning models for data analysis',
@@ -90,6 +93,7 @@ const Experience: React.FC = () => {
       period: '4 mos',
       location: 'Remote',
       type: 'Internship',
+      logo: '../assets/shiash.png',
       description: 'Started journey in full-stack development with focus on web technologies and database management.',
       responsibilities: [
         'Developed web applications using modern frameworks',
@@ -116,6 +120,7 @@ const Experience: React.FC = () => {
       period: '2 mos',
       location: 'Madurai, Tamil Nadu, India',
       type: 'Internship',
+      logo: "../assets/zetspire.png", // Using placeholder as no specific logo provided
       description: 'Explored Internet of Things technologies and their practical applications.',
       responsibilities: [
         'Researched IoT technologies and applications',
@@ -142,6 +147,7 @@ const Experience: React.FC = () => {
       period: '1 yr',
       location: 'Hybrid',
       type: 'Trainee',
+      logo: '../assets/whizifi.png',
       description: 'Foundation training in robotics engineering and automation technologies.',
       responsibilities: [
         'Learned robotics fundamentals and programming',
@@ -187,105 +193,100 @@ const Experience: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-600 via-secondary-600 to-accent-600 transform md:-translate-x-1/2" />
-
-          {/* Experience Cards */}
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={exp.id}
-                className={`flex flex-col md:flex-row items-start gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-white dark:bg-gray-900 border-4 border-primary-600 rounded-full transform md:-translate-x-1/2 -translate-y-2" />
-
-                {/* Content Card */}
-                <div className={`flex-1 ml-12 md:ml-0 ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
+        {/* Experience Cards Grid */}
+        <div className="grid gap-8 lg:gap-12">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={exp.id}
+              className="bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+                {/* Left Column - Company Logo and Meta */}
+                <div className="lg:w-1/4 flex flex-col items-center lg:items-start">
                   <motion.div
-                    className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-                    whileHover={{ y: -5 }}
+                    className="w-20 h-20 mb-4 rounded-2xl overflow-hidden shadow-lg bg-white p-2"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
-                    {/* Header */}
-                    <div className="flex flex-wrap items-start justify-between mb-6">
-                      <div className="flex items-start gap-4">
-                        <motion.div
-                          className={`w-12 h-12 bg-gradient-to-r ${exp.color} rounded-xl flex items-center justify-center`}
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <Building className="w-6 h-6 text-white" />
-                        </motion.div>
-                        <div>
-                          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                            {exp.position}
-                          </h3>
-                          <h4 className="text-xl text-primary-600 dark:text-primary-400 font-semibold mb-3">
-                            {exp.company}
-                          </h4>
-                        </div>
-                      </div>
-                      <div className={`px-4 py-2 bg-gradient-to-r ${exp.color} text-white rounded-full text-sm font-medium`}>
-                        {exp.type}
-                      </div>
-                    </div>
+                    <img
+                      src="/logo.png"
+                      alt={`${exp.company} logo`}
+                      className="w-full h-full object-contain"
+                    />
+                  </motion.div>
 
-                    {/* Meta Info */}
-                    <div className="flex flex-wrap gap-4 mb-6">
-                      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                  <div className="text-center lg:text-left space-y-2">
+                    <div className={`px-4 py-2 bg-gradient-to-r ${exp.color} text-white rounded-full text-sm font-medium inline-block`}>
+                      {exp.type}
+                    </div>
+                    <div className="flex flex-col gap-1 text-sm text-gray-600 dark:text-gray-400">
+                      <div className="flex items-center gap-2 justify-center lg:justify-start">
                         <Calendar className="w-4 h-4" />
-                        <span className="text-sm">{exp.duration}</span>
-                        <span className="text-xs text-gray-500">({exp.period})</span>
+                        <span>{exp.duration}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                      <div className="text-xs text-gray-500 dark:text-gray-500">
+                        {exp.period}
+                      </div>
+                      <div className="flex items-center gap-2 justify-center lg:justify-start">
                         <MapPin className="w-4 h-4" />
-                        <span className="text-sm">{exp.location}</span>
+                        <span className="text-xs">{exp.location}</span>
                       </div>
                     </div>
+                  </div>
+                </div>
 
-                    {/* Description */}
-                    <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                {/* Right Column - Content */}
+                <div className="lg:w-3/4">
+                  <div className="mb-6">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                      {exp.position}
+                    </h3>
+                    <h4 className="text-lg md:text-xl text-primary-600 dark:text-primary-400 font-semibold mb-4">
+                      {exp.company}
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                       {exp.description}
                     </p>
+                  </div>
 
-                    {/* Responsibilities */}
-                    <div className="mb-6">
-                      <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        Key Responsibilities
-                      </h5>
-                      <ul className="space-y-2">
-                        {exp.responsibilities.map((responsibility, idx) => (
-                          <motion.li
-                            key={idx}
-                            className="flex items-start gap-3"
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: idx * 0.1 }}
-                          >
-                            <div className="w-2 h-2 bg-primary-600 rounded-full mt-2 flex-shrink-0" />
-                            <span className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                              {responsibility}
-                            </span>
-                          </motion.li>
-                        ))}
-                      </ul>
+                  {/* Responsibilities */}
+                  <div className="mb-6">
+                    <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                      Key Responsibilities
+                    </h5>
+                    <div className="grid gap-2">
+                      {exp.responsibilities.slice(0, 4).map((responsibility, idx) => (
+                        <motion.div
+                          key={idx}
+                          className="flex items-start gap-3"
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: idx * 0.1 }}
+                        >
+                          <div className="w-2 h-2 bg-primary-600 rounded-full mt-2 flex-shrink-0" />
+                          <span className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                            {responsibility}
+                          </span>
+                        </motion.div>
+                      ))}
                     </div>
+                  </div>
 
+                  {/* Technologies and Achievements in Grid */}
+                  <div className="grid md:grid-cols-2 gap-6">
                     {/* Technologies */}
-                    <div className="mb-6">
+                    <div>
                       <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                        Technologies & Skills
+                        Technologies
                       </h5>
                       <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech) => (
+                        {exp.technologies.slice(0, 6).map((tech) => (
                           <span
                             key={tech}
                             className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm"
@@ -301,11 +302,11 @@ const Experience: React.FC = () => {
                       <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                         Key Achievements
                       </h5>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {exp.achievements.map((achievement, idx) => (
+                      <div className="space-y-2">
+                        {exp.achievements.slice(0, 3).map((achievement, idx) => (
                           <motion.div
                             key={idx}
-                            className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg"
+                            className="flex items-start gap-2"
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
@@ -319,11 +320,11 @@ const Experience: React.FC = () => {
                         ))}
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Skills Section */}
@@ -337,7 +338,7 @@ const Experience: React.FC = () => {
           <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
             Leadership & Professional Skills
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}

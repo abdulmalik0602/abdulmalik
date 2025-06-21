@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
-import Logo from '../assets/logo.png';
 
 interface NavigationProps {
   activeSection: string;
@@ -42,6 +41,13 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
     setIsOpen(false);
   };
 
+  const scrollToHome = () => {
+    const element = document.getElementById('home');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -55,20 +61,33 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-        <motion.div
-            className="flex items-center space-x-2 text-xl font-bold text-primary-600 dark:text-primary-400"
+          {/* Logo and Brand */}
+          <motion.button
+            onClick={scrollToHome}
+            className="flex items-center gap-3 group"
             whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <img
-              src={Logo}// replace with your actual image path
-              alt="Logo"
-              className="h-15 w-12 object-contain"
-            />
-            
-          </motion.div>
+            <motion.div
+              className="w-10 h-10 rounded-lg overflow-hidden"
+              whileHover={{ rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <img
+                src="/logo.png"
+                alt="Abdul Malik P A Logo"
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
+            <div className="hidden sm:block">
+              <span className="text-lg font-bold text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
+                Abdul Malik P A
+              </span>
+            </div>
+          </motion.button>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden xl:flex items-center space-x-6">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
@@ -102,7 +121,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
           </div>
 
           {/* Mobile Navigation Button */}
-          <div className="lg:hidden flex items-center space-x-4">
+          <div className="xl:hidden flex items-center space-x-4">
             <motion.button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -123,17 +142,17 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
 
         {/* Mobile Navigation Menu */}
         <motion.div
-          className={`lg:hidden overflow-hidden ${isOpen ? 'max-h-96' : 'max-h-0'}`}
+          className={`xl:hidden overflow-hidden ${isOpen ? 'max-h-screen' : 'max-h-0'}`}
           initial={false}
           animate={{ height: isOpen ? 'auto' : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="py-4 space-y-2">
+          <div className="py-4 space-y-2 max-h-96 overflow-y-auto">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
                   activeSection === item.id
                     ? 'bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400'
                     : 'hover:bg-gray-100 dark:hover:bg-gray-800'
