@@ -228,7 +228,7 @@ const Certifications: React.FC = () => {
                 </div>
               )}
 
-              {/* Action Button */}
+              {/* Action Button
               <motion.button
                 className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-primary-600 hover:text-white transition-colors text-sm font-medium"
                 whileHover={{ scale: 1.02 }}
@@ -237,7 +237,7 @@ const Certifications: React.FC = () => {
                 <Shield className="w-4 h-4" />
                 View Credential
                 <ExternalLink className="w-3 h-3" />
-              </motion.button>
+              </motion.button> */}
             </motion.div>
           ))}
         </div>

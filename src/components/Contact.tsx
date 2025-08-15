@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle, Github, Linkedin, Coffee } from 'lucide-react';
 import logo from '../assets/logo.png'
+import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -20,20 +21,35 @@ const Contact: React.FC = () => {
     });
   };
 
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    await emailjs.send(
+      'service_jt65wkz', // e.g., service_abc123
+      'template_2ev2io8', // e.g., template_xyz456
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      'cCn13iSUj0GbagB89' // e.g., kjsd8sd9_abc123
+    );
+
     setIsSubmitting(false);
     setIsSubmitted(true);
     setFormData({ name: '', email: '', subject: '', message: '' });
-    
-    // Reset success message after 5 seconds
+
     setTimeout(() => setIsSubmitted(false), 5000);
-  };
+  } catch (error) {
+    console.error('EmailJS Error:', error);
+    setIsSubmitting(false);
+    alert('Oops! Something went wrong. Please try again later.');
+  }
+};
 
   const contactInfo = [
     {

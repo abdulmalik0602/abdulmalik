@@ -408,7 +408,7 @@ const Projects: React.FC = () => {
                           <Github className="w-4 h-4" />
                           Code
                         </motion.a>
-                        <motion.a
+                        {/* <motion.a
                           href={project.live}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -419,7 +419,7 @@ const Projects: React.FC = () => {
                         >
                           <ExternalLink className="w-4 h-4" />
                           Demo
-                        </motion.a>
+                        </motion.a> */}
                       </>
                     )}
                     <motion.button

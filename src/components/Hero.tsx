@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const [currentRole, setCurrentRole] = useState(0);
   const roles = [
     'Full Stack Developer',
-    'Front-End Expert', 
+    'Front-End Expert',
     'Cloud Admin',
     'Technical Architect'
   ];
@@ -116,7 +116,7 @@ const Hero: React.FC = () => {
                   ease: "easeInOut"
                 }}
               />
-              
+
               {/* Profile image container - Made taller to show full image */}
               <motion.div
                 className="relative w-80 h-[500px] md:w-96 md:h-[600px] rounded-3xl overflow-hidden shadow-2xl"
@@ -128,7 +128,7 @@ const Hero: React.FC = () => {
                   alt="Abdul Malik P A - Full Stack Developer"
                   className="w-full h-full object-cover object-top"
                 />
-                
+
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
               </motion.div>
@@ -191,7 +191,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left order-1 lg:order-2"
           >
-            <motion.h1 
+            <motion.h1
               className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -199,7 +199,7 @@ const Hero: React.FC = () => {
             >
               Abdul Malik P A
             </motion.h1>
-            
+
             <motion.div
               className="h-16 mb-6 flex items-center justify-center lg:justify-start"
               initial={{ opacity: 0 }}
@@ -268,7 +268,7 @@ const Hero: React.FC = () => {
                 View My Work
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </motion.button>
-              
+
               <motion.button
                 className="group px-6 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
